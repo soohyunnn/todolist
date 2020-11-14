@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+/*App*/
+body{
+  background: #e9ecef;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/*TodoTemplate*/
+.TodoTemplateBlock{
+  width: 512px;
+  height: 768px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  position: relative; /*추후 박스 하단에 추가 버튼을 위치시키기 위한 설정*/
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin: 0 auto; /*페이지 중앙에 나타나도록 설정*/
+
+  margin-top: 96px;
+  margin-bottom: 32px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/*TodoHead*/
+.TodoHeadBlock{
+  padding-top: 48px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e9ecef;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1{
+  margin: 0;
+  font-size: 36px;
+}
+
+.day{
+  margin-top: 4px;
+  color: #868e96;
+  font-size: 21px;
+}
+
+.tasks-left{
+  color: #20c997;
+  font-size: 18px;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+/*TodoList*/
+.TodoListBlock{
+  flex: 1;
+  padding: 20px 32px;
+  padding-bottom: 48px;
+  overflow-y: auto;
+  /* background: gray; 사이즈 조정이 잘 되고 있는지 확인하기 위한 임시 스타일 */
+}
+
+
+/*TodoItem*/
+
+
+.App {
+  /* width: 600px;
+  height: 700px;
+  margin: 7% auto;
+  border: 1px solid purple;
+  border-radius: 34px;
+  text-align: center; */
+  
 }
