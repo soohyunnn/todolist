@@ -35,14 +35,21 @@ function App() {
   return (
     <>
     <div className="App">
-      <h1>TodoList</h1>
+      <h1>Todos</h1>
       <input onChange={onChange} value={input} />
-      <button onClick={onCreate}>등록</button>
-      <button onClick={onRemove}>초기화</button>
-      <h2>List</h2>
+      <button className="button" onClick={onCreate}>등록</button>
+      <button className="button" onClick={onRemove}>초기화</button>
+      <h2>♥ List ♥</h2>
       <div>
         
-          {todos.map(todo => <li style={{listStyle: 'none'}} key={todo.id}>{todo.text}</li>)}
+          {todos.map(todo => 
+            <>
+              <li style={{listStyle: 'none'}} key={todo.id}>{todo.text}
+              <button>X</button>
+              </li>
+              
+            </>
+          )}
   
         
       </div>
