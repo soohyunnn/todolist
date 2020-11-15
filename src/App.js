@@ -9,16 +9,21 @@ function App() {
 
   const id = useRef(1);
 
+  const onEnterKeyPress = (e) => {
+    if (e.key === 'Enter'){
+      onCreate();
+    }
+  }
+
   const onChange = (e) => {
     setInput(e.target.value);
   };
 
-  const onCreate = () => {
+  const onCreate = (e) => {
     const todo  = {
       id : id.current,
       text : input
     }
-
     setTodos([
       ...todos,
       todo
@@ -26,17 +31,22 @@ function App() {
 
     setInput('')
     id.current++;
+
   }
 
   const onRemove = () => {
     setInput('')
   }
 
+  const onDelete = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
+
   return (
     <>
     <div className="App">
       <h1>Todos</h1>
-      <input onChange={onChange} value={input} />
+      <input onChange={onChange} onKeyPress={onEnterKeyPress} value={input} />   
       <button className="button" onClick={onCreate}>등록</button>
       <button className="button" onClick={onRemove}>초기화</button>
       <h2>♥ List ♥</h2>
@@ -44,10 +54,11 @@ function App() {
         
           {todos.map(todo => 
             <>
+            <div className="todolist">
               <li style={{listStyle: 'none'}} key={todo.id}>{todo.text}
-              <button>X</button>
+              <button onClick={()=> onDelete(todo.id)} className="XButton">X</button>
               </li>
-              
+            </div>  
             </>
           )}
   
