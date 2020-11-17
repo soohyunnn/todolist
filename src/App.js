@@ -7,6 +7,7 @@ function App() {
 
   const [todos, setTodos] = useState([]);
 
+
   const id = useRef(1);
 
   const onEnterKeyPress = (e) => {
@@ -19,10 +20,11 @@ function App() {
     setInput(e.target.value);
   };
 
-  const onCreate = (e) => {
+  const onCreate = () => {
     const todo  = {
       id : id.current,
-      text : input
+      text : input,
+      action: true,
     }
     setTodos([
       ...todos,
@@ -42,6 +44,14 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id))
   }
 
+  const onToggle = (action, id) => {
+    console.log('action',action);
+    console.log('id',id);
+    setTodos(
+      todos.map(todo => todo.id === id ? {...todo, action : !todo.action }: todo)
+    )
+  }
+
   return (
     <>
     <div className="App">
@@ -55,8 +65,18 @@ function App() {
           {todos.map(todo => 
             <>
             <div className="todolist">
-              <li style={{listStyle: 'none'}} key={todo.id}>{todo.text}
-              <button onClick={()=> onDelete(todo.id)} className="XButton">X</button>
+              <li
+               style={{color : todo.action === true ? 'green' : 'purple'}} 
+               key={todo.id} 
+               onClick={() => onToggle(todo.action, todo.id)}
+               >
+                 {todo.text}
+              <button
+               onClick={()=> onDelete(todo.id)} 
+               className="XButton"
+               >
+                 X
+              </button>
               </li>
             </div>  
             </>
