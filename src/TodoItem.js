@@ -1,8 +1,28 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import axios from "axios";
 
 function TodoItem(){
+
+    const todos1 = [];
+
+    const getTodos = async () => {
+        const response = await axios.get(
+            '/todos'
+        );
+        dispatch({
+            type : 'aaa',
+            response : response.data
+        })
+        return response.data;
+        
+    };
+
+    useEffect(()=>{
+        getTodos();
+    },[]);
+
+    console.log('todos1',todos1);
 
     const {todos} = useSelector(state => ({
         todos: state.todos

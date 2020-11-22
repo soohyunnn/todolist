@@ -10,6 +10,13 @@ export const initialState = {
 export function reducer(state=initialState, action) {
 
   switch(action.type){
+    case "aaa" : {
+        console.log('aaa',action.response)
+        return{
+            ...state,
+            todos : action.response
+        }
+    }
     case "CHANGE_INPUT":
       return {
         ...state,
@@ -26,7 +33,8 @@ export function reducer(state=initialState, action) {
       return {
         input: initialState.input,
         todos: state.todos.concat(action.todo),
-        imsiTodos : state.todos.concat(action.todo)
+        imsiTodos : state.todos.concat(action.todo),
+        
       };
     case "DELETE_TODO":
       return {

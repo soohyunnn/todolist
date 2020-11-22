@@ -4,13 +4,13 @@ import './App.css';
 import {reducer, initialState} from './TodoReducer';
 import TodoTemplate from './TodoTemplate';
 
-async function getTodos() {
-  const response = await axios.get(
-    "/todos"
-  );
-  console.log(response.data);
-  return response.data;
-}
+// async function getTodos() {
+//   const response = await axios.get(
+//     "/todos"
+//   );
+//   //console.log(response.data);
+//   return response.data;
+// }
 
 function App() {
 
@@ -18,9 +18,9 @@ function App() {
   // const id = useRef(1);
   // const {todos} = state;
 
-  useEffect(()=> {
-    getTodos();
-  },[])
+  // useEffect(()=> {
+  //   getTodos();
+  // },[])
 
   // const onEnterKeyPress = (e) => {
   //   if (e.key === 'Enter'){
