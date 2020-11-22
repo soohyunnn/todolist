@@ -6,7 +6,7 @@ function TodoList(){
     return(
         <>
         <h2>♥ List ♥</h2>
-        <div>
+        <div style={{padding : 23}} >
             <TodoItem />
         </div>
       </>

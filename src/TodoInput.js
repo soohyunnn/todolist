@@ -13,7 +13,7 @@ function TodoInput() {
     const dispatch = useDispatch();
 
 
-    console.log('todos',todos);
+    //console.log('todos',todos);
 
     const onEnterKeyPress = (e) => {
         if (e.key === 'Enter'){
