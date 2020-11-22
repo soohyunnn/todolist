@@ -2,17 +2,17 @@
   "todos": [
     {
       "id": 1,
-      "text": "a",
+      "text": "1",
       "action": true
     },
     {
       "id": 2,
-      "text": "g",
+      "text": "2",
       "action": true
     },
     {
       "id": 3,
-      "text": "d",
+      "text": "3",
       "action": true
     },
     {
@@ -22,12 +22,7 @@
     },
     {
       "id": 5,
-      "text": "1",
-      "action": true
-    },
-    {
-      "id": 6,
-      "text": "g",
+      "text": "2",
       "action": true
     }
   ]

@@ -24,7 +24,7 @@ function TodoInput() {
         input: state.input
     }));
     const dispatch = useDispatch();
-    const id = useRef(0);
+    const id = useRef(todos.length);
 
     console.log('id',id);
 
@@ -44,7 +44,7 @@ function TodoInput() {
     
       const onCreate = useCallback(() => {
         console.log('aaa',todos);
-        id.current += 1;
+        
         axios.post('/todos',{
             id: id.current,
             text: input,
@@ -58,7 +58,6 @@ function TodoInput() {
             action: true,
           }
         });
-        
       },[input]);
     
       const onRemove = useCallback(() => {
