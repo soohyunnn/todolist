@@ -20,6 +20,7 @@ function TodoItem(){
 
     useEffect(()=>{
         getTodos();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     console.log('todos1',todos1);
